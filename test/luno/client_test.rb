@@ -1,8 +1,8 @@
 require "test_helper"
 
-class Luno::ClientTest < Minitest::Test
+class LunoTest < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::Luno::Client::VERSION
+    refute_nil ::Luno::VERSION
   end
 
   def test_it_does_something_useful
