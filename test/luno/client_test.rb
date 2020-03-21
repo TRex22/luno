@@ -5,7 +5,11 @@ class LunoTest < Minitest::Test
     refute_nil ::Luno::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_that_the_client_has_compatible_api_version
+    assert_equal 'V1', Luno::Client.compatible_api_version
+  end
+
+  def test_that_the_client_has_api_version
+    assert_equal 'v1 2020-02-24', Luno::Client.api_version
   end
 end
