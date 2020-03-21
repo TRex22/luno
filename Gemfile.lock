@@ -1,0 +1,75 @@
+PATH
+  remote: .
+  specs:
+    luno-client (0.1.0)
+      oas_parser (~> 0.24)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (6.0.2.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+      zeitwerk (~> 2.2)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    builder (3.2.4)
+    coderay (1.1.2)
+    concurrent-ruby (1.1.6)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
+    deep_merge (1.2.1)
+    hansi (0.2.0)
+    hash-deep-merge (0.1.1)
+    hashdiff (1.0.1)
+    i18n (1.8.2)
+      concurrent-ruby (~> 1.0)
+    method_source (1.0.0)
+    mini_portile2 (2.4.0)
+    minitest (5.14.0)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    mustermann-contrib (1.1.1)
+      hansi (~> 0.2.0)
+      mustermann (= 1.1.1)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
+    oas_parser (0.24.0)
+      activesupport (>= 4.0.0)
+      addressable (~> 2.3)
+      builder (~> 3.2.3)
+      deep_merge (~> 1.2.1)
+      hash-deep-merge
+      mustermann-contrib (~> 1.1.1)
+      nokogiri
+    pry (0.13.0)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    public_suffix (4.0.3)
+    rake (10.5.0)
+    ruby2_keywords (0.0.2)
+    safe_yaml (1.0.5)
+    thread_safe (0.3.6)
+    tzinfo (1.2.6)
+      thread_safe (~> 0.1)
+    webmock (3.8.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+    zeitwerk (2.3.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.17)
+  luno-client!
+  minitest (~> 5.0)
+  pry (~> 0.13)
+  rake (~> 10.0)
+  webmock (~> 3.8.3)
+
+BUNDLED WITH
+   1.17.3
