@@ -1,6 +1,6 @@
 require "luno/version"
+require "luno/client"
 
 module Luno
   class Error < StandardError; end
-  # Your code goes here...
 end
