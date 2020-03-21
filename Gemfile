@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/TRex22/luno-client" }
+git_source(:github) {|repo_name| "https://github.com/TRex22/luno" }
 
-# Specify your gem's dependencies in luno-client.gemspec
+# Specify your gem's dependencies in luno.gemspec
 gemspec

@@ -1,16 +1,16 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "luno/client/version"
+require "luno/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "luno-client"
-  spec.version       = Luno::Client::VERSION
+  spec.name          = "luno"
+  spec.version       = Luno::VERSION
   spec.authors       = ["trex22"]
   spec.email         = ["contact@jasonchalom.com"]
 
   spec.summary       = "A client for using the Luno API in Ruby."
   spec.description   = "A client for using the Luno API in Ruby. It relies on the swagger spec from their api documentation. https://www.luno.com/en/developers/api"
-  spec.homepage      = "https://github.com/TRex22/luno-client"
+  spec.homepage      = "https://github.com/TRex22/luno"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
