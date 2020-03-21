@@ -1,3 +1,5 @@
+require 'httparty'
+
 require "luno/version"
 require "luno/client"
 
