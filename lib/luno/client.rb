@@ -1,15 +1,15 @@
 module Luno
   class Client
+    # Endpoints
     include ::Luno::Accounts
-    include ::Luno::Transactions
     include ::Luno::Beneficiaries
     include ::Luno::Markets
     include ::Luno::Orders
     include ::Luno::Quotes
     include ::Luno::Recieving
     include ::Luno::Sending
+    include ::Luno::Transactions
     include ::Luno::Withdrawals
-    include ::Luno::Markets
 
     # Beta Endpoints
     include ::Luno::Lightning
