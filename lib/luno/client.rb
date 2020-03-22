@@ -74,9 +74,17 @@ module Luno
     end
 
     def construct_response_obejct(response, start_time, end_time)
-      response.to_json.merge({
-        metadata: construct_metadata(start_time, end_time)
-      })
+      if response.ok?
+        response.to_json.merge({
+          metadata: construct_metadata(start_time, end_time)
+        })
+      else
+        {
+          body: response.body,
+          headers: response.headers,
+          metadata: construct_metadata(start_time, end_time)
+        }
+      end
     end
 
     def construct_metadata(start_time, end_time)
