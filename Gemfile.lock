@@ -4,6 +4,7 @@ PATH
     luno (0.1.0)
       active_attr (~> 0.15)
       httparty (~> 0.18)
+      nokogiri (~> 1.10.9)
 
 GEM
   remote: https://rubygems.org/
