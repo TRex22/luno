@@ -1,7 +1,9 @@
 require 'httparty'
 
-require "luno/version"
-require "luno/client"
+require 'luno/version'
+
+require 'luno/accounts'
+require 'luno/client'
 
 module Luno
   class Error < StandardError; end
