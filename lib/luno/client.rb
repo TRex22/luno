@@ -6,7 +6,7 @@ module Luno
     include ::Luno::Markets
     include ::Luno::Orders
     include ::Luno::Quotes
-    include ::Luno::Recieving
+    include ::Luno::Receiving
     include ::Luno::Sending
     include ::Luno::Transactions
     include ::Luno::Withdrawals
@@ -15,7 +15,7 @@ module Luno
     include ::Luno::Lightning
     include ::Luno::Streaming
 
-    # Custom
+    # Custom Endpoints
     include ::Luno::OtherData
 
     attr_reader :key, :secret, :base_path, :port

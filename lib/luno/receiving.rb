@@ -1,5 +1,5 @@
 module Luno
-  module Recieving
+  module Receiving
 
   end
 end
