@@ -1,5 +1,7 @@
 # Luno
 
+This is still a work in progress (WIP) ... more to come soon.
+
 This is a client for the Luno API. See: https://www.luno.com/en/developers/api
 
 ## Installation
