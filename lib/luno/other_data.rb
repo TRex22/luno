@@ -31,11 +31,13 @@ module Luno
       }
     end
 
+    # TODO
     def countries
       response = call_countries
     end
 
     # From API Documentation
+    # [WIP]
     def currencies
       lines = []
 
@@ -47,9 +49,14 @@ module Luno
         .map(&:text)
         .map { |text| text.split.join(" ") }
 
-      output.merge({ 'metadata' => response['metadata'] })
+      {
+        'body' => output,
+        'headers' => response['headers'],
+        'metadata' => response['metadata']
+      }
     end
 
+    # TODO
     def permissions
       response = call_api_documentation
     end
