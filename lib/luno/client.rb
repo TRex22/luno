@@ -53,7 +53,7 @@ module Luno
       )
 
       end_time = get_micro_second_time
-      construct_response_object(response, start_time, end_time)
+      construct_response_object(response, path, start_time, end_time)
     end
 
     def authorise_and_send(http_method:, path:, payload: {})
@@ -72,12 +72,12 @@ module Luno
       )
 
       end_time = get_micro_second_time
-      construct_response_object(response, start_time, end_time)
+      construct_response_object(response, path, start_time, end_time)
     end
 
-    def construct_response_object(response, start_time, end_time)
+    def construct_response_object(response, path, start_time, end_time)
       {
-        'body' => parse_body(response),
+        'body' => parse_body(response, path),
         'headers' => response.headers,
         'metadata' => construct_metadata(response, start_time, end_time)
       }
@@ -101,8 +101,14 @@ module Luno
       response.body.nil? || response.body.empty?
     end
 
-    def parse_body(response)
-      JSON.parse(response.body)
+    def parse_body(response, path)
+      parsed_response = JSON.parse(response.body) # Purposely not using HTTParty
+
+      if parsed_response.dig(path.to_s)
+        parsed_response.dig(path.to_s)
+      else
+        parsed_response
+      end
     rescue JSON::ParserError => _e
       response.body
     end
