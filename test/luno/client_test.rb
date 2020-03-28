@@ -6,7 +6,7 @@ class LunoTest < Minitest::Test
   end
 
   def test_that_the_client_has_compatible_api_version
-    assert_equal 'V1', Luno::Client.compatible_api_version
+    assert_equal 'v1', Luno::Client.compatible_api_version
   end
 
   def test_that_the_client_has_api_version
