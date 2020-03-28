@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["contact@jasonchalom.com"]
 
   spec.summary       = "A client for using the Luno API in Ruby."
-  spec.description   = "A client for using the Luno API in Ruby. It relies on the swagger spec from their api documentation. https://www.luno.com/en/developers/api"
+  spec.description   = "A client for using the Luno API in Ruby. Built form their api documentation. https://www.luno.com/en/developers/api. This is an unofficial project."
   spec.homepage      = "https://github.com/TRex22/luno"
   spec.license       = "MIT"
 
