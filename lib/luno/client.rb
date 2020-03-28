@@ -40,12 +40,12 @@ module Luno
 
     private
 
-    def unauthorised_and_send(http_method:, path:, payload: {})
+    def unauthorised_and_send(http_method:, path:, payload: {}, params: {})
       start_time = get_micro_second_time
 
       response = HTTParty.send(
         http_method.to_sym,
-        construct_base_path(path),
+        construct_base_path(path, params),
         body: payload,
         headers: { 'Content-Type': 'application/json' },
         port: port,
@@ -56,14 +56,14 @@ module Luno
       construct_response_object(response, path, start_time, end_time)
     end
 
-    def authorise_and_send(http_method:, path:, payload: {})
+    def authorise_and_send(http_method:, path:, payload: {}, params: {})
       auth = {username: key, password: secret}
 
       start_time = get_micro_second_time
 
       response = HTTParty.send(
         http_method.to_sym,
-        construct_base_path(path),
+        construct_base_path(path, params),
         body: payload,
         headers: { 'Content-Type': 'application/json' },
         port: port,
@@ -117,8 +117,18 @@ module Luno
       (Time.now.to_f * 1000000).to_i
     end
 
-    def construct_base_path(path)
-      "#{base_path}/#{path}"
+    def construct_base_path(path, params)
+      constructed_path = "#{base_path}/#{path}"
+
+      if params != {}
+        constructed_path
+      else
+        "#{constructed_path}?#{process_params(params)}"
+      end
+    end
+
+    def process_params(params)
+      params.keys.map { |key| "#{key}=#{params[key]}" }.join('&')
     end
   end
 end
