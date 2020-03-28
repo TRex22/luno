@@ -1,5 +1,7 @@
 module Luno
   class Client
+    include ::Luno::Constants
+
     # Endpoints
     include ::Luno::Accounts
     include ::Luno::Beneficiaries
@@ -74,27 +76,35 @@ module Luno
     end
 
     def construct_response_obejct(response, start_time, end_time)
-      if response.ok?
-        response.to_json.merge({
-          metadata: construct_metadata(start_time, end_time)
-        })
-      else
-        {
-          body: response.body,
-          headers: response.headers,
-          metadata: construct_metadata(start_time, end_time)
-        }
-      end
+      {
+        'body' => parse_body(response),
+        'headers' => response.headers,
+        'metadata' => construct_metadata(response, start_time, end_time)
+      }
     end
 
-    def construct_metadata(start_time, end_time)
+    def construct_metadata(response, start_time, end_time)
       total_time = end_time - start_time
 
       {
-        start_time: start_time,
-        end_time: end_time,
-        total_time: total_time
+        'start_time' => start_time,
+        'end_time' => end_time,
+        'total_time' => total_time
       }
+    end
+
+    def body_is_present?(response)
+      !body_is_missing?(response)
+    end
+
+    def body_is_missing?(response)
+      response.body.nil? || response.body.empty?
+    end
+
+    def parse_body(response)
+      JSON.parse(response.body)
+    rescue JSON::ParserError => _e
+      response.body
     end
 
     def get_micro_second_time

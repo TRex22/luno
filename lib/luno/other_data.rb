@@ -3,6 +3,9 @@
 
 module Luno
   module OtherData
+    COUNTRY_ENDPOINT = 'https://www.luno.com/en/countries'
+    DOCUMENTATION_ENDPOINT = 'https://www.luno.com/en/developers/api'
+
     def ping(limit: 4, paths: ['https://www.luno.com/', 'https://api.mybitx.com/api/1/'])
       endpoint_metrics = paths.map do |path|
         responses = []
@@ -12,45 +15,51 @@ module Luno
         end
 
         avg_time = responses
-          .map { |r| r.dig(:metadata)&.dig(:total_time) }
+          .map { |r| r.dig('metadata')&.dig('total_time') }
           .reduce(&:+) / limit
 
         {
-          path: path,
-          average_time: avg_time
+          'path' => path,
+          'average_time' => avg_time
         }
       end
 
       {
-        metadata: {
-          endpoint_metrics: endpoint_metrics
+        'metadata' => {
+          'endpoint_metrics' => endpoint_metrics
         }
       }
     end
 
     def countries
-      call_countries
+      response = call_countries
     end
 
     # From API Documentation
     def currencies
       lines = []
 
-      call_api_documentation
+      response = call_api_documentation
+
+      output = parse_html(response['body'])
         .at('div#tag\/Currency')
         .search('li')
         .map(&:text)
         .map { |text| text.split.join(" ") }
+
+      output.merge({ 'metadata' => response['metadata'] })
     end
 
     def permissions
-      call_api_documentation
+      response = call_api_documentation
     end
 
     def changelog
       lines = []
 
-      call_api_documentation
+      response = call_api_documentation
+
+      parse_html(response['body'])
         .at('div#tag\/Changelog')
         .search('li')
         .map(&:text)
@@ -73,17 +82,31 @@ module Luno
         output.merge!(key => text)
       end
 
-      output
+      {
+        'body' => output,
+        'headers' => response['headers'],
+        'metadata' => response['metadata']
+      }
     end
 
     private
 
     def call_countries
-      parse_html(HTTParty.get('https://www.luno.com/en/countries').body)
+      start_time = get_micro_second_time
+
+      response = HTTParty.get(COUNTRY_ENDPOINT)
+
+      end_time = get_micro_second_time
+      construct_response_obejct(response, start_time, end_time)
     end
 
     def call_api_documentation
-      parse_html(HTTParty.get('https://www.luno.com/en/developers/api').body)
+      start_time = get_micro_second_time
+
+      response = HTTParty.get(DOCUMENTATION_ENDPOINT)
+
+      end_time = get_micro_second_time
+      construct_response_obejct(response, start_time, end_time)
     end
 
     def parse_html(raw_html)

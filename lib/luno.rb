@@ -2,6 +2,7 @@ require 'httparty'
 require 'nokogiri'
 
 require 'luno/version'
+require 'luno/constants'
 
 # Endpoints
 require 'luno/accounts'
