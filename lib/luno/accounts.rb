@@ -6,6 +6,11 @@ module Luno
       authorise_and_send(http_method: :get, path: path)
     end
 
+    def list_pending_account_transactions(account_id)
+      path = "accounts/#{account_id}/pending"
+      authorise_and_send(http_method: :get, path: path)
+    end
+
     def list_account_transactions(account_id)
       path = "accounts/#{account_id}/transactions"
       authorise_and_send(http_method: :get, path: path)
