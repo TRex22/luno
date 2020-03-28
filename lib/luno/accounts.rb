@@ -21,6 +21,9 @@ module Luno
     # List balances has been moved and retired as an endpoint
 
     # POST paths
+    # TODO:
+    # Create account: /api/1/accounts body: { name: '', currency: '' }
+    # TODO: Check internally that inputs are valid
 
     # PUT paths
     # TODO:
