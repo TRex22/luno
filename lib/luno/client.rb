@@ -53,7 +53,7 @@ module Luno
       )
 
       end_time = get_micro_second_time
-      construct_response_obejct(response, start_time, end_time)
+      construct_response_object(response, start_time, end_time)
     end
 
     def authorise_and_send(http_method:, path:, payload: {})
@@ -72,10 +72,10 @@ module Luno
       )
 
       end_time = get_micro_second_time
-      construct_response_obejct(response, start_time, end_time)
+      construct_response_object(response, start_time, end_time)
     end
 
-    def construct_response_obejct(response, start_time, end_time)
+    def construct_response_object(response, start_time, end_time)
       {
         'body' => parse_body(response),
         'headers' => response.headers,
