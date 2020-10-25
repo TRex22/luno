@@ -120,7 +120,7 @@ module Luno
     def construct_base_path(path, params)
       constructed_path = "#{base_path}/#{path}"
 
-      if params != {}
+      if params == {}
         constructed_path
       else
         "#{constructed_path}?#{process_params(params)}"
