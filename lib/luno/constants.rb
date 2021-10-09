@@ -12,6 +12,7 @@ module Luno
       ZMW: 'Zambian Kwacha'
     }
 
+    # TODO: Update, see: https://www.luno.com/en/countries
     CURRENCY_PAIRS = [
       'XBTEUR',
       'XBTZAR',

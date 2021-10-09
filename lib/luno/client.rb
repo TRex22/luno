@@ -22,7 +22,7 @@ module Luno
 
     attr_reader :key, :secret, :base_path, :port
 
-    def initialize(key:, secret:, base_path: 'https://api.mybitx.com/api/1', port: 80)
+    def initialize(key:, secret:, base_path: 'https://api.luno.com/api/1', port: 80)
       @key = key
       @secret = secret
       @base_path = base_path
