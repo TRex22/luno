@@ -1,10 +1,10 @@
 PATH
   remote: .
   specs:
-    luno (0.2.3)
-      active_attr (~> 0.15)
-      httparty (~> 0.18)
-      nokogiri (~> 1.11.2)
+    luno (0.2.5)
+      active_attr (~> 0.15.3)
+      httparty (~> 0.20.0)
+      nokogiri (~> 1.12.5)
 
 GEM
   remote: https://rubygems.org/
@@ -67,7 +67,7 @@ GEM
       ruby-progressbar
     mocha (1.11.2)
     multi_xml (0.6.0)
-    nokogiri (1.11.7-arm64-darwin)
+    nokogiri (1.12.5-arm64-darwin)
       racc (~> 1.4)
     pry (0.14.1)
       coderay (~> 1.1)
