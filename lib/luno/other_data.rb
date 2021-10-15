@@ -6,7 +6,7 @@ module Luno
     COUNTRY_ENDPOINT = 'https://www.luno.com/en/countries'
     DOCUMENTATION_ENDPOINT = 'https://www.luno.com/en/developers/api'
 
-    def ping(limit: 4, paths: ['https://www.luno.com/', 'https://api.mybitx.com/api/1/'])
+    def ping(limit: 4, paths: ['https://www.luno.com/', 'https://api.mybitx.com/api/1/', 'https://api.luno.com/api/1'])
       endpoint_metrics = paths.map do |path|
         responses = []
 
