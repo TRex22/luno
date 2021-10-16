@@ -40,9 +40,9 @@ module Luno
         ttl: ttl
       }
 
-      params.merge({ counter_volume: counter_volume }) if counter_volume
-      params.merge({ base_volume: base_volume }) if base_volume
-      params.merge({ client_order_id: client_order_id }) if client_order_id
+      params = params.merge({ counter_volume: counter_volume }) if counter_volume
+      params = params.merge({ base_volume: base_volume }) if base_volume
+      params = params.merge({ client_order_id: client_order_id }) if client_order_id
 
       authorise_and_send(http_method: :post, path: path, params: params)
     end
@@ -73,12 +73,12 @@ module Luno
         ttl: ttl
       }
 
-      params.merge({ post_only: post_only }) if post_only
-      params.merge({ stop_price: stop_price }) if stop_price
-      params.merge({ stop_direction: stop_direction }) if stop_direction
-      params.merge({ base_account_id: base_account_id }) if base_account_id
-      params.merge({ counter_account_id: counter_account_id }) if counter_account_id
-      params.merge({ client_order_id: client_order_id }) if client_order_id
+      params = params.merge({ post_only: post_only }) if post_only
+      params = params.merge({ stop_price: stop_price }) if stop_price
+      params = params.merge({ stop_direction: stop_direction }) if stop_direction
+      params = params.merge({ base_account_id: base_account_id }) if base_account_id
+      params = params.merge({ counter_account_id: counter_account_id }) if counter_account_id
+      params = params.merge({ client_order_id: client_order_id }) if client_order_id
 
       authorise_and_send(http_method: :post, path: path, params: params)
     end
