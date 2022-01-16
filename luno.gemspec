@@ -23,17 +23,17 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "httparty", "~> 0.20.0"
-  spec.add_dependency "active_attr", "~> 0.15.3"
-  spec.add_dependency "nokogiri", "~> 1.12.5"
+  spec.add_dependency "active_attr", "~> 0.15.4"
+  spec.add_dependency "nokogiri", "~> 1.13.1"
 
   # Development dependancies
-  spec.add_development_dependency "bundler", "~> 2.2.22"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_development_dependency "minitest-focus", "~> 1.1.2"
-  spec.add_development_dependency "minitest-reporters", "~> 1.4.2"
+  spec.add_development_dependency "bundler", "~> 2.3.5"
+  spec.add_development_dependency "rake", "~> 13.0.6"
+  spec.add_development_dependency "minitest", "~> 5.15.0"
+  spec.add_development_dependency "minitest-focus", "~> 1.3.1"
+  spec.add_development_dependency "minitest-reporters", "~> 1.5.0"
   spec.add_development_dependency "timecop", "~> 0.9.1"
-  spec.add_development_dependency "mocha", "~> 1.11.2"
-  spec.add_development_dependency "pry", "~> 0.13"
-  spec.add_development_dependency "webmock", "~> 3.8.3"
+  spec.add_development_dependency "mocha", "~> 1.13.0"
+  spec.add_development_dependency "pry", "~> 0.14.1"
+  spec.add_development_dependency "webmock", "~> 3.14.0"
 end
