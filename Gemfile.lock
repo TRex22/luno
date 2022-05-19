@@ -66,7 +66,7 @@ GEM
       ruby-progressbar
     mocha (1.13.0)
     multi_xml (0.6.0)
-    nokogiri (1.13.1-x86_64-linux)
+    nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     pry (0.14.1)
       coderay (~> 1.1)
