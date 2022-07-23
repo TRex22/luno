@@ -1,6 +1,5 @@
 module Luno
   module Accounts
-    # GET paths
     def list_accounts
       path = 'accounts'
       authorise_and_send(http_method: :get, path: path)

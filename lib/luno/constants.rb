@@ -1,5 +1,7 @@
 module Luno
   module Constants
+    # TODO: Add in undocumented limits
+
     CURRENCIES = {
       XBT: 'Bitcoin',
       BCH: 'Bitcoin Cash',
