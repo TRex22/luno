@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["contact@jasonchalom.com"]
 
   spec.summary       = "A client for using the Luno API in Ruby."
-  spec.description   = "A client for using the Luno API in Ruby. Built form their api documentation. https://www.luno.com/en/developers/api. This is an unofficial project."
+  spec.description   = "A client for using the Luno API in Ruby. Built from their api documentation. https://www.luno.com/en/developers/api. This is an unofficial project."
   spec.homepage      = "https://github.com/TRex22/luno"
   spec.license       = "MIT"
 
@@ -23,16 +23,16 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "httparty", "~> 0.21.0"
-  spec.add_dependency "active_attr", "~> 0.15.4"
-  spec.add_dependency "nokogiri", "~> 1.14.0.rc1"
+  spec.add_dependency "active_attr", "~> 0.16.0"
+  spec.add_dependency "nokogiri", "~> 1.15.4"
 
   # Development dependancies
-  spec.add_development_dependency "rake", "~> 13.0.6"
-  spec.add_development_dependency "minitest", "~> 5.15.0"
-  spec.add_development_dependency "minitest-focus", "~> 1.3.1"
-  spec.add_development_dependency "minitest-reporters", "~> 1.5.0"
-  spec.add_development_dependency "timecop", "~> 0.9.1"
-  spec.add_development_dependency "mocha", "~> 1.13.0"
-  spec.add_development_dependency "pry", "~> 0.14.1"
-  spec.add_development_dependency "webmock", "~> 3.14.0"
+  spec.add_development_dependency "rake", "~> 13.1.0"
+  spec.add_development_dependency "minitest", "~> 5.20.0"
+  spec.add_development_dependency "minitest-focus", "~> 1.4.0"
+  spec.add_development_dependency "minitest-reporters", "~> 1.6.1"
+  spec.add_development_dependency "timecop", "~> 0.9.8"
+  spec.add_development_dependency "mocha", "~> 2.1.0"
+  spec.add_development_dependency "pry", "~> 0.14.2"
+  spec.add_development_dependency "webmock", "~> 3.19.1"
 end
